@@ -21,6 +21,7 @@ int Insert(ElementType X,int i,List L);//Insert Element X in list L,i is the ind
 int Delete(int i,List L);//Delete the i-th Element int list L
 int Length(List L);//return the Length of list L
 int IsEmpty(List L);//return 1 is Empty
+int IsFull(List L);//return 1 is Full
 List MakeEmpty(){
 	List Ptrl;
 	Ptrl=(List)malloc(sizeof(struct LNode));
@@ -57,4 +58,7 @@ int IsEmpty(List L){
 	if(L->Last<0) return 1;//return 1 is Empty
 	else return 0;
 }
+int IsFull(List L){
+	if(L->Last==MAXSIZE-1) return 1;//return 1 is Full
+	else return 0;
 #endif
