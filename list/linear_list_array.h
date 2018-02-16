@@ -6,6 +6,7 @@
 #ifndef LINEAR_LIST_ARRAY_H
 #define LINEAR_LIST_ARRYA_H
 #define MAXSIZE 100
+#include <malloc.h>
 #define ERROR -1
 #define SUCCESS 0
 typedef int ElementType;
@@ -13,7 +14,7 @@ typedef struct LNode * List;
 struct LNode{
 	ElementType Data[MAXSIZE];
 	int Last;
-}
+};
 List MakeEmpty();//Initialize the List and return it
 ElementType FindKth(int K,List L);//Find the Kth Element and return it
 int Find(ElementType X,List L);//Find the X int List L 
@@ -39,7 +40,7 @@ int Insert(ElementType X,int i,List L){
 	if(L->Last==MAXSIZE-1) return ERROR;//判断表慢
 	if(i<0||i>L->Last) return ERROR;//判对位置错误
 	for(j=L->Last;j>=i;j--)
-		L-Data[j+1]=L->Data[j];
+		L->Data[j+1]=L->Data[j];
 	L->Data[i]=X;
 	L->Last++;
 	return SUCCESS;
@@ -61,4 +62,5 @@ int IsEmpty(List L){
 int IsFull(List L){
 	if(L->Last==MAXSIZE-1) return 1;//return 1 is Full
 	else return 0;
+}
 #endif
