@@ -1,3 +1,6 @@
+/*
+ *线性表的链表方式实现
+*/
 #ifndef _LINEAR_LIST_LINKED_LIST_
 #define _LINEAR_LIST_LINKED_LIST_
 #include <malloc.h>
