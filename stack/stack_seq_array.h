@@ -6,12 +6,12 @@
 #include <malloc.h>
 #define ERROR -1
 #define SUCCESS 0
-typedef int ElementType;
+typedef int ElementType;//可以修改int 为其他<类型/结构体>
 typedef struct Stack * Stack;
 struct Stack{
     ElementType *Data;
-    int top;
-    int MAXSIZE;
+    int top;//top是指针指向栈顶
+    int MAXSIZE;//此变量保存了栈的最大长度
 };
 Stack CreateStack(int maxsize);
 int Push(Stack S,ElementType x);
